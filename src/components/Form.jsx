@@ -53,7 +53,7 @@ const Form = () => {
     
   return (
     <div>
-      <h1>Login Account</h1>
+      <h1>Contact Us</h1>
         
         <form onSubmit={handleSubmit} className="container-fluid">
 
