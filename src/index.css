@@ -27,7 +27,9 @@ label{
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
+.alert{
+  margin-top: 25px;
+}
 @media only screen and (max-width: 600px) {
   .container-fluid{
     width: 95%;

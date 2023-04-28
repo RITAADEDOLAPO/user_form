@@ -11,7 +11,7 @@ const Form = () => {
     });
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState('')
 
 
   const handleChange = (e) => {
@@ -39,17 +39,15 @@ const Form = () => {
     })
     try {
       const response = await axios.post("https://my-json-server.typicode.com/tundeojediran/contacts-api-server/inquiries", userData)
-      console.log(response.data)
+      .then(() => {
+        setFormSubmitted('Success! Thank You For Submitting this Form')
+      })
     } catch (error) {
       console.error(error)
       setError(error.message)
     } 
       setIsLoading(false)
-      if (response.ok) {
-        setFormSubmitted(true)
     }
-      
-  }
     
   return (
     <div>
@@ -81,7 +79,7 @@ const Form = () => {
 
           {error && <p>{error}</p>}
 
-          {formSubmitted && <p>Success!</p>}
+          {formSubmitted && <p className="alert alert-success">{formSubmitted}</p>}
         </form>
         
     </div>
