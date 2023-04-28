@@ -77,7 +77,7 @@ const Form = () => {
             {isLoading ? <div className="spinner-border text-danger"></div> : 'Submit'}
           </button>
 
-          {error && <p>{error}</p>}
+          {error && <p className="alert alert-danger">{error}</p>}
 
           {formSubmitted && <p className="alert alert-success">{formSubmitted}</p>}
         </form>
